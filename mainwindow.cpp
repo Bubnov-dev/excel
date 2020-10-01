@@ -17,8 +17,6 @@ MainWindow::MainWindow(QWidget *parent)
     QWidget *widget = tabWidget->currentWidget();
     table = qobject_cast<QTableWidget*>(widget);
 
-   // appearance();
-   // appearance2();
 
     mExcel = new QAxObject( "Excel.Application", this); // Подключение к Excel
     mExcel->setProperty("DisplayAlerts","0");
@@ -36,25 +34,6 @@ MainWindow::MainWindow(QWidget *parent)
     key();
 }
 
-/*void MainWindow::appearance()
-{
-    ui->column->setIcon(QIcon(":/add/column.png"));
-    ui->row->setIcon(QIcon(":/add/row.png"));
-    ui->save->setIcon(QIcon(":/save/Save.png"));
-    ui->saveAs->setIcon(QIcon(":/save/Save as.png"));
-    ui->newTab->setIcon(QIcon(":/add/tab.png"));
-}
-
-void MainWindow::appearance2()
-{
-    ui->deleteColumn->setIcon(QIcon(":/remove/deleteColumn.png"));
-    ui->deleteRow->setIcon(QIcon(":/remove/deleteRow.png"));
-    this->setWindowIcon(QIcon(":/main/excel.png"));
-    this->setWindowTitle("Excel Work");
-    ui->question->setIcon(QIcon(":/main/question.png"));
-    ui->deleteTab->setIcon(QIcon(":/remove/deleteTab.png"));
-}
-*/
 void MainWindow::saveAs()
 {
     dir = QFileDialog::getSaveFileUrl(this,tr("Сохранение Excel файла"),tr(""),tr("Excel(*.xlsx)"));
