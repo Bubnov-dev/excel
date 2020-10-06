@@ -36,6 +36,7 @@ public:
     void removeFromExcelCells(QString list,int row,int column);
 
     void key();
+
 public slots:
 
     void saveAs();
